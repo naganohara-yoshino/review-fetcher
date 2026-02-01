@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
+	import { Spinner } from '$lib/components/ui/spinner/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as Field from '$lib/components/ui/field/index.js';
 	import { goto } from '$app/navigation';
@@ -9,6 +10,8 @@
 	const id = $props.id();
 
 	let username: string | undefined = $state();
+
+	let isLoading = $state(false);
 </script>
 
 <Card.Root class="mx-auto w-full max-w-sm">
@@ -21,6 +24,7 @@
 			onsubmit={(e) => {
 				e.preventDefault();
 				if (username !== undefined) {
+					isLoading = true;
 					goto(resolve('/[username]/reviews', { username }));
 				}
 			}}
@@ -31,7 +35,9 @@
 					<Input id="username-{id}" type="text" placeholder="sai" required bind:value={username} />
 				</Field.Field>
 				<Field.Field>
-					<Button type="submit" class="w-full">Go</Button>
+					<Button type="submit" class="w-full">
+						Go{#if isLoading}<Spinner />{/if}
+					</Button>
 				</Field.Field>
 			</Field.Group>
 		</form>
