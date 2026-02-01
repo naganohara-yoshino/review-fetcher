@@ -1,42 +1,43 @@
-# sv
+# Review Fetcher
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A Svelte project for fetching and displaying reviews.
 
-## Creating a project
+## Setup
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Install dependencies:
+   ```sh
+   bun install
+   ```
+2. Start the development server:
+   ```sh
+   bun dev
+   ```
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Build
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv create --template minimal --types ts --add vitest="usages:unit,component" prettier eslint tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:static" devtools-json paraglide="languageTags:zh+demo:no" --install bun review-fetcher
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To create a production build:
 
 ```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run build
 ```
 
-## Building
+## 📄 License
 
-To create a production version of your app:
+This project is licensed under the [GNU Affero General Public License v3.0](LICENSE) or any later version.
 
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+> Bangumi Tier
+>
+> Copyright (C) 2026 Yoshino Naganohara
+>
+> This program is free software: you can redistribute it and/or modify
+> it under the terms of the GNU Affero General Public License as
+> published by the Free Software Foundation, either version 3 of the
+> License, or (at your option) any later version.
+>
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+> GNU Affero General Public License for more details.
+>
+> You should have received a copy of the GNU Affero General Public License
+> along with this program. If not, see <https://www.gnu.org/licenses/>.
