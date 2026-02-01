@@ -47,8 +47,7 @@
 		"vitest-browser-svelte": "^2.0.2"
 	},
 	"dependencies": {
-		"@types/luxon": "^3.7.1",
-		"luxon": "^3.7.2",
+		"es-toolkit": "^1.44.0",
 		"openapi-fetch": "^0.15.0"
 	}
 }
