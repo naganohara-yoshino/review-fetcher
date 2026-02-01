@@ -1,4 +1,4 @@
-import { fetchAllAnimeCollections } from "$lib/api/bgm-api-fetcher";
+import { fetchAllAnimeCollections, fetchUserNickname } from "$lib/api/bgm-api-fetcher";
 import type { PresentedSubject } from "$lib/schemas/presented-subject";
 import { isNil } from "es-toolkit";
 import type { PageLoad } from "./$types";
@@ -6,6 +6,8 @@ import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ params }) => {
   const { username } = params;
+
+  const nickname = await fetchUserNickname(username);
   
   const subjects = await fetchAllAnimeCollections(username);
 
@@ -26,6 +28,6 @@ export const load: PageLoad = async ({ params }) => {
     }
   );
 
-  return { presentedSubjects };
+  return { presentedSubjects, nickname };
 
 }
